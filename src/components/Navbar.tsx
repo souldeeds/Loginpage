@@ -27,17 +27,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           onClick={() => onSelectView(currentUser ? 'dashboard' : 'signin')}
           className="flex items-center gap-2.5 cursor-pointer group"
         >
-          <div className="w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-200">
-            <div className="w-4 h-4 border-2 border-white rounded-sm" />
-          </div>
-          <div>
-            <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
-              NexusOS
-              <span className="text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-md font-bold bg-blue-50 text-blue-700 dark:bg-blue-950/80 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
-                PRO
-              </span>
-            </span>
-          </div>
+          <img
+            src="https://res.cloudinary.com/pukpucds/image/upload/v1784719760/Weversity_Logo_with_less_padding_kbwek2.png"
+            alt="Logo"
+            referrerPolicy="no-referrer"
+            className="h-9 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
+          />
         </div>
 
         {/* View Switcher / User Action */}

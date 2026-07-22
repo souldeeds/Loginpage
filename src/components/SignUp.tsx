@@ -112,19 +112,37 @@ export const SignUp: React.FC<SignUpProps> = ({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -12 }}
       transition={{ duration: 0.25 }}
-      className="w-full max-w-5xl mx-auto flex flex-col lg:flex-row items-stretch justify-center gap-8"
+      className="w-full max-w-md mx-auto"
     >
-      {/* Sign Up Main Form Card */}
-      <div className="w-full lg:max-w-[460px] bg-white dark:bg-slate-900 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 p-8 sm:p-10 relative overflow-hidden flex flex-col justify-between">
-        <div>
-          {/* Header */}
-          <div className="mb-6">
-            <h1 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
-              Create an account
-            </h1>
-            <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-              Get started with your developer account today.
-            </p>
+      {/* Course Card Layout */}
+      <div className="w-full bg-white dark:bg-slate-900 rounded-3xl shadow-2xl shadow-slate-200/60 dark:shadow-none border border-slate-200/80 dark:border-slate-800 overflow-hidden">
+        {/* Top Half Media Banner with Full Logo Image */}
+        <div className="w-full h-44 sm:h-48 bg-slate-950 relative flex items-center justify-center p-6 border-b border-slate-200/80 dark:border-slate-800">
+          <img
+            src="https://res.cloudinary.com/pukpucds/image/upload/v1784719760/Weversity_Logo_with_less_padding_kbwek2.png"
+            alt="Logo Banner"
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-contain filter drop-shadow-md"
+          />
+        </div>
+
+        {/* Bottom Half Form Content */}
+        <div className="p-6 sm:p-8">
+          {/* Navigation Tabs (Sign In / Sign Up Switcher) */}
+          <div className="bg-slate-100 dark:bg-slate-800/90 p-1.5 rounded-2xl flex items-center mb-6 border border-slate-200/60 dark:border-slate-700/60">
+            <button
+              type="button"
+              onClick={() => onNavigate('signin')}
+              className="flex-1 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all text-center"
+            >
+              Sign In
+            </button>
+            <button
+              type="button"
+              className="flex-1 py-2 rounded-xl text-xs sm:text-sm font-bold bg-blue-600 text-white shadow-md shadow-blue-500/25 transition-all text-center"
+            >
+              Sign Up
+            </button>
           </div>
 
           {/* General Error */}
@@ -335,7 +353,6 @@ export const SignUp: React.FC<SignUpProps> = ({
               )}
             </button>
           </form>
-        </div>
 
         {/* Switch to Sign In */}
         <p className="text-center text-xs text-slate-500 dark:text-slate-400 mt-6 pt-4 border-t border-slate-100 dark:border-slate-800">
@@ -348,64 +365,6 @@ export const SignUp: React.FC<SignUpProps> = ({
             Sign in instead
           </button>
         </p>
-      </div>
-
-      {/* Feature Side / Preview Side */}
-      <div className="hidden lg:flex flex-col w-[420px] justify-between">
-        <div className="bg-blue-600 rounded-3xl p-8 text-white relative overflow-hidden shadow-xl shadow-blue-500/20 flex-1 flex flex-col justify-between">
-          <div className="relative z-10">
-            <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 border border-white/20">
-              <Shield className="w-6 h-6 text-white" />
-            </div>
-            <h2 className="text-2xl font-bold leading-snug mb-3">
-              Start building with NexusOS
-            </h2>
-            <p className="text-blue-100 text-sm mb-6 leading-relaxed">
-              Create your account to unlock high-performance infrastructure, instant session synchronization, and zero-latency auth token flows.
-            </p>
-            <ul className="space-y-3.5 text-xs font-semibold">
-              <li className="flex items-center gap-3">
-                <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center shrink-0">
-                  <div className="w-2 h-2 bg-white rounded-full" />
-                </div>
-                <span>Unlimited project workspaces</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center shrink-0">
-                  <div className="w-2 h-2 bg-white rounded-full" />
-                </div>
-                <span>Priority 24/7 technical support</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center shrink-0">
-                  <div className="w-2 h-2 bg-white rounded-full" />
-                </div>
-                <span>Advanced security and session analytics</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="mt-8 relative z-10 pt-6 border-t border-white/20">
-            <button
-              onClick={() => onNavigate('signin')}
-              className="w-full py-3 bg-white text-blue-600 font-bold rounded-xl hover:bg-slate-50 transition-colors shadow-lg shadow-blue-900/20 text-sm"
-            >
-              Sign In to Existing Account
-            </button>
-          </div>
-
-          {/* Decorative elements */}
-          <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-blue-400/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute top-10 -left-10 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl pointer-events-none" />
-        </div>
-
-        <div className="mt-4 px-2">
-          <p className="text-slate-500 dark:text-slate-400 text-xs italic">
-            "NexusOS has completely simplified our team registration and login workflow. The interface is clean, sleek, and fast."
-          </p>
-          <p className="mt-1 font-bold text-xs text-slate-700 dark:text-slate-300">
-            — Marcus Vance, Engineering Lead
-          </p>
         </div>
       </div>
     </motion.div>

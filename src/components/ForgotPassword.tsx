@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, ArrowLeft, CheckCircle2, KeyRound } from 'lucide-react';
+import { Mail, ArrowLeft, CheckCircle2, KeyRound, Shield } from 'lucide-react';
 import { AuthView } from '../types/auth';
 import { validateEmail } from '../utils/authStorage';
 
@@ -49,9 +49,20 @@ export const ForgotPassword: React.FC<ForgotPasswordProps> = ({
       transition={{ duration: 0.25 }}
       className="w-full max-w-md mx-auto"
     >
-      <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 p-8 sm:p-10 relative overflow-hidden">
-        {isSubmitted ? (
-          <div className="text-center py-4 space-y-4">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-2xl shadow-slate-200/60 dark:shadow-none border border-slate-200/80 dark:border-slate-800 overflow-hidden">
+        {/* Top Half Media Banner with Full Logo Image */}
+        <div className="w-full h-44 sm:h-48 bg-slate-950 relative flex items-center justify-center p-6 border-b border-slate-200/80 dark:border-slate-800">
+          <img
+            src="https://res.cloudinary.com/pukpucds/image/upload/v1784719760/Weversity_Logo_with_less_padding_kbwek2.png"
+            alt="Logo Banner"
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-contain filter drop-shadow-md"
+          />
+        </div>
+
+        <div className="p-6 sm:p-8">
+          {isSubmitted ? (
+            <div className="text-center py-4 space-y-4">
             <div className="w-12 h-12 bg-blue-100 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mx-auto shadow-inner">
               <CheckCircle2 className="w-6 h-6" />
             </div>
@@ -150,6 +161,7 @@ export const ForgotPassword: React.FC<ForgotPasswordProps> = ({
             </div>
           </>
         )}
+        </div>
       </div>
     </motion.div>
   );
