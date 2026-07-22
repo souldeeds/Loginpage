@@ -1,0 +1,6 @@
+{
+  "name": "Sign In and Sign Up App",
+  "description": "A clean and modern authentication portal featuring sign in, sign up, form validation, password strength indicators, and user session management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
